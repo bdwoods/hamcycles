@@ -91,7 +91,7 @@ void Instance::n2eTriples()
 			tempTriple.push_back(edge[1]);
 			tempTriple.push_back(edge[2]);
 		}
-		cout << tempTriple[0] << " " << tempTriple[1] << " " << tempTriple[2] << endl;
+		//cout << tempTriple[0] << " " << tempTriple[1] << " " << tempTriple[2] << endl;
 		edgeTriples.push_back(tempTriple);
 		std::sort(edgeTriples.begin(), edgeTriples.end());
 	}

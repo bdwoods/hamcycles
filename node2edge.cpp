@@ -38,7 +38,7 @@ void node2edge(Instance& inst, TourList& tList, TripleList& tripList, string fNa
 		fout << "0" << endl;
 	}
 	
-	fout  << endl << "IncidenceMatrix" << endl;
+	fout  << endl << "IncidentMatrix" << endl;
 	for( int i = 0; i < inst.numNodes; i++)
 	{
 		for( int j = 0; j < inst.numEdges; j++)
