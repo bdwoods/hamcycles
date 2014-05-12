@@ -74,14 +74,25 @@ void Instance::n2eTriples()
 	//edgeTriples->clear();
 	int edge[3];
 	vector<int> tempTriple;
+	//cout << nodeTriples->size();
 	for( int i = 0; i < nodeTriples->size(); i++)
 	{
+		tempTriple.clear();
 		edge[0] = edgeNumLookup(nodeTriples->at(i)[0], nodeTriples->at(i)[1]);
 		edge[1] = edgeNumLookup(nodeTriples->at(i)[1], nodeTriples->at(i)[2]);
 		edge[2] = edgeNumLookup(nodeTriples->at(i)[2], nodeTriples->at(i)[3]);
-		tempTriple.push_back(edge[0]);
-		tempTriple.push_back(edge[1]);
-		tempTriple.push_back(edge[2]);
-		edgeTriples->push_back(tempTriple);
+		if(edge[0] > edge[2])	{		
+			tempTriple.push_back(edge[2]);
+			tempTriple.push_back(edge[1]);
+			tempTriple.push_back(edge[0]);
+		}
+		else	{
+			tempTriple.push_back(edge[0]);
+			tempTriple.push_back(edge[1]);
+			tempTriple.push_back(edge[2]);
+		}
+		cout << tempTriple[0] << " " << tempTriple[1] << " " << tempTriple[2] << endl;
+		edgeTriples.push_back(tempTriple);
+		std::sort(edgeTriples.begin(), edgeTriples.end());
 	}
 }

@@ -20,7 +20,7 @@ void node2edge(Instance& inst, TourList& tList, TripleList& tripList, string fNa
 	fout << "NodeSize" << endl << inst.numNodes << endl << endl;
 	fout << "EdgeSize" << endl << inst.numEdges << endl << endl;
 
-	cout << inst.nodeTriples->size();
+	//cout << inst.nodeTriples->size();
 
 	fout << "TripleSize" << endl << inst.nodeTriples->size() << endl << endl;
 	
@@ -31,10 +31,14 @@ void node2edge(Instance& inst, TourList& tList, TripleList& tripList, string fNa
 	// FOR EACH EXAMPLE, ADD CUT CONSTRAINT NUMBER
 	if(fName == "data\\example2")
 	{
-		fout << "2" << endl << endl;
+		fout << "2" << endl;
+	}
+	else
+	{
+		fout << "0" << endl;
 	}
 	
-	fout << "IncidenceMatrix" << endl;
+	fout  << endl << "IncidenceMatrix" << endl;
 	for( int i = 0; i < inst.numNodes; i++)
 	{
 		for( int j = 0; j < inst.numEdges; j++)
@@ -47,12 +51,19 @@ void node2edge(Instance& inst, TourList& tList, TripleList& tripList, string fNa
 		fout << endl;
 	}
 	fout << endl << "Triples" << endl;
+
+
 	inst.n2eTriples();
-	for (int k = 0; k < inst.edgeTriples->size(); k++ )
+
+	for ( int k = 0; k < inst.edgeTriples.size(); k++ )
 	{
-		fout << inst.edgeTriples->at(k)[0] << " " << inst.edgeTriples->at(k)[1] << " "
-			<< inst.edgeTriples->at(k)[2] << endl;
+		for ( int m = 0; m < 3; m++ )
+		{
+			fout << inst.edgeTriples[k][m] << " ";
+		}
+		fout << endl;
 	}
+
 	//for ( int k = 0; k < inst.nodeTriples->size(); k++ )
 	//{
 	//	//cin.get();
