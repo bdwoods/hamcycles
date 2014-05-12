@@ -8,3 +8,18 @@ TripleSize
 40
 
 CutConstraintSize
+2
+
+IncidenceMatrix
+0 1 2 3 
+0 4 5 
+1 6 7 8 
+4 9 10 
+5 9 11 
+2 11 12 
+6 12 13 
+7 13 14 
+8 14 15 
+3 10 15 
+
+Triples

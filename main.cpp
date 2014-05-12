@@ -35,7 +35,7 @@ int main (int argc, char **argv)
 	//	cout << endl;
 	//}
 
-	inst.triples = &tripList.tripleList;
+	inst.nodeTriples = &tripList.tripleList;
 
 	tripleTXT(tripList, fName); //output triples to file.
 

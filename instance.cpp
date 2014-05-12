@@ -5,13 +5,13 @@ using namespace std;
 
 int Instance::revLookupTriple(int edge1, int edge2, int edge3)
 {
-	for (int i=0; i<triples->size(); i++)
+	for (int i=0; i<nodeTriples->size(); i++)
 	{
-		if ((*triples)[i][0] == edge1)
+		if ((*nodeTriples)[i][0] == edge1)
 		{
-			if ((*triples)[i][1] == edge2)
+			if ((*nodeTriples)[i][1] == edge2)
 			{
-				if ((*triples)[i][2] == edge3)
+				if ((*nodeTriples)[i][2] == edge3)
 				{
 					return i;
 				}
@@ -55,4 +55,33 @@ bool Instance::isEdge(int a, int b)
 			return true;
 	}
 	return false;
+}
+
+int Instance::edgeNumLookup(int nodeA, int nodeB)
+{
+	for( int j = 0; j < numEdges; j++)
+	{
+		if(( edgeList[j][0] == nodeA && edgeList[j][1] == nodeB )
+			|| ( edgeList[j][0] == nodeB && edgeList[j][1] == nodeA ))
+		{
+			return j;
+		}
+	}
+}
+
+void Instance::n2eTriples()
+{
+	//edgeTriples->clear();
+	int edge[3];
+	vector<int> tempTriple;
+	for( int i = 0; i < nodeTriples->size(); i++)
+	{
+		edge[0] = edgeNumLookup(nodeTriples->at(i)[0], nodeTriples->at(i)[1]);
+		edge[1] = edgeNumLookup(nodeTriples->at(i)[1], nodeTriples->at(i)[2]);
+		edge[2] = edgeNumLookup(nodeTriples->at(i)[2], nodeTriples->at(i)[3]);
+		tempTriple.push_back(edge[0]);
+		tempTriple.push_back(edge[1]);
+		tempTriple.push_back(edge[2]);
+		edgeTriples->push_back(tempTriple);
+	}
 }
