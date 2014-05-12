@@ -1,0 +1,10 @@
+NodeSize
+10
+
+EdgeSize
+16
+
+TripleSize
+40
+
+CutConstraintSize
