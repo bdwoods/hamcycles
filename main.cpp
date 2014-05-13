@@ -15,7 +15,7 @@ Instance read_instance(string fName);
 int main (int argc, char **argv)
 {
 	
-	string fName = "data\\ex2t4l.txt";
+	string fName = "data\\example2.dat";
 	
 	Instance inst = read_instance(fName);
 	TourList tList = Backtrack(inst);

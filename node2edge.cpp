@@ -64,6 +64,19 @@ void node2edge(Instance& inst, TourList& tList, TripleList& tripList, string fNa
 		fout << endl;
 	}
 
+	fout << endl << "CutConstraints" << endl;
+
+	//FOR EACH EXAMPLE ADD CUT CONSTRAINTS HERE.
+	if(fName == "data\\example2")
+	{
+		fout << "0 10 11" << endl;
+		fout << "1 12 15" << endl;
+	}
+	else
+	{
+	}
+
+
 	//for ( int k = 0; k < inst.nodeTriples->size(); k++ )
 	//{
 	//	//cin.get();
