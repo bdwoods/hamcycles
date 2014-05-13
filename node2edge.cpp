@@ -75,17 +75,5 @@ void node2edge(Instance& inst, TourList& tList, TripleList& tripList, string fNa
 	else
 	{
 	}
-
-
-	//for ( int k = 0; k < inst.nodeTriples->size(); k++ )
-	//{
-	//	//cin.get();
-	//	for ( int m = 0; m < 3; m++)
-	//	{
-	//		fout << inst.edgeNumLookup(inst.nodeTriples->at(k)[m], inst.nodeTriples->at(k)[m+1]) << " ";
-	//		//fout << inst.triples->at(k)[m] << " ";
-	//	}
-	//	fout << endl;
-	//}
 }
 
